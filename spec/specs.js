@@ -9,7 +9,7 @@ describe('Contact', function() {
   it("adds the fullName method to all contacts", function() {
     var testContact = new Contact ("Max", "Powers");
     expect(testContact.fullName()).to.equal("Max Powers");
-  })
+  });
 });
 
 describe('Address', function() {
@@ -18,5 +18,10 @@ describe('Address', function() {
     expect(testAddress.street).to.equal("1 Microsoft Way");
     expect(testAddress.city).to.equal("Redmond");
     expect(testAddress.state).to.equal("WA");
-  })
-})
+  });
+
+  it("adds the fullAddress method to all addresses", function() {
+    var testAddress = new Address("1 Microsoft Way", "Redmond", "WA");
+    expect(testAddress.fullAddress()).to.equal("1 Microsoft Way, Redmond, WA");
+  });
+});
