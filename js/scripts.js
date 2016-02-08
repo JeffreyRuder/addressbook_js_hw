@@ -7,3 +7,21 @@ function Contact(firstName, lastName) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
+
+
+//UI logic
+
+$(document).ready(function() {
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+
+    var inputFirst = $("input#new-first-name").val();
+    var inputLast = $("input#new-last-name").val();
+    var newContact = new Contact(inputFirst, inputLast);
+
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+  });
+});
