@@ -11,3 +11,12 @@ describe('Contact', function() {
     expect(testContact.fullName()).to.equal("Max Powers");
   })
 });
+
+describe('Address', function() {
+  it("creates a new address with the given properties", function() {
+    var testAddress = new Address("1 Microsoft Way", "Redmond", "WA");
+    expect(testAddress.street).to.equal("1 Microsoft Way");
+    expect(testAddress.city).to.equal("Redmond");
+    expect(testAddress.state).to.equal("WA");
+  })
+})
